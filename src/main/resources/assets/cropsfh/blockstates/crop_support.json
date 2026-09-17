@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "cropsfh:block/crop_support"
+    }
+  }
+}

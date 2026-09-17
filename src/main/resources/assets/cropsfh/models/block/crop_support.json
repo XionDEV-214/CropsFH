@@ -1,0 +1,61 @@
+{
+  "credit": "CropsNH-style crop sticks",
+  "textures": {
+    "particle": "cropsfh:block/crop_support",
+    "stick": "cropsfh:block/crop_support"
+  },
+  "elements": [
+    {
+      "name": "post_nw",
+      "from": [2, 0, 2],
+      "to": [3, 13, 3],
+      "faces": {
+        "north": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "east": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "south": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "west": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "up": {"uv": [0, 0, 1, 1], "texture": "#stick"},
+        "down": {"uv": [0, 0, 1, 1], "texture": "#stick"}
+      }
+    },
+    {
+      "name": "post_ne",
+      "from": [13, 0, 2],
+      "to": [14, 13, 3],
+      "faces": {
+        "north": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "east": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "south": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "west": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "up": {"uv": [0, 0, 1, 1], "texture": "#stick"},
+        "down": {"uv": [0, 0, 1, 1], "texture": "#stick"}
+      }
+    },
+    {
+      "name": "post_se",
+      "from": [13, 0, 13],
+      "to": [14, 13, 14],
+      "faces": {
+        "north": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "east": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "south": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "west": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "up": {"uv": [0, 0, 1, 1], "texture": "#stick"},
+        "down": {"uv": [0, 0, 1, 1], "texture": "#stick"}
+      }
+    },
+    {
+      "name": "post_sw",
+      "from": [2, 0, 13],
+      "to": [3, 13, 14],
+      "faces": {
+        "north": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "east": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "south": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "west": {"uv": [0, 0, 1, 13], "texture": "#stick"},
+        "up": {"uv": [0, 0, 1, 1], "texture": "#stick"},
+        "down": {"uv": [0, 0, 1, 1], "texture": "#stick"}
+      }
+    }
+  ]
+}

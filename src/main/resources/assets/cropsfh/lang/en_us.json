@@ -1,0 +1,18 @@
+{
+  "itemGroup.cropsfh": "CropsFH",
+  "block.cropsfh.crop_support": "Crop Support",
+  "block.cropsfh.cross_crop_support": "Cross Crop Support",
+  "item.cropsfh.crop_support": "Crop Support",
+  "item.cropsfh.cross_crop_support": "Cross Crop Support",
+  "tooltip.cropsfh.growth": "Growth",
+  "tooltip.cropsfh.gain": "Gain",
+  "tooltip.cropsfh.resistance": "Resistance",
+  "block.cropsfh.crop_harvester.tooltip": "Harvests mature CropsFH crops in range",
+  "block.cropsfh.crop_harvester.range": "Range: %sx%s",
+  "block.cropsfh.crop_harvester.slots": "Slots: %s",
+  "block.cropsfh.lv_crop_harvester": "Basic Crop Harvester",
+  "block.cropsfh.mv_crop_harvester": "Advanced Crop Harvester",
+  "block.cropsfh.hv_crop_harvester": "Advanced Crop Harvester II",
+  "block.cropsfh.ev_crop_harvester": "Advanced Crop Harvester III",
+  "block.cropsfh.iv_crop_harvester": "Elite Crop Harvester"
+}

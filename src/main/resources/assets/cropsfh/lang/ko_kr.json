@@ -1,0 +1,18 @@
+{
+  "itemGroup.cropsfh": "CropsFH",
+  "block.cropsfh.crop_support": "작물 지지대",
+  "block.cropsfh.cross_crop_support": "겹친 작물 지지대",
+  "item.cropsfh.crop_support": "작물 지지대",
+  "item.cropsfh.cross_crop_support": "겹친 작물 지지대",
+  "tooltip.cropsfh.growth": "성장 속도",
+  "tooltip.cropsfh.gain": "수확량",
+  "tooltip.cropsfh.resistance": "저항성",
+  "block.cropsfh.crop_harvester.tooltip": "범위 내의 성숙한 CropsFH 작물을 수확합니다",
+  "block.cropsfh.crop_harvester.range": "범위: %sx%s",
+  "block.cropsfh.crop_harvester.slots": "슬롯: %s",
+  "block.cropsfh.lv_crop_harvester": "기본 작물 자동 수확기",
+  "block.cropsfh.mv_crop_harvester": "고급 작물 자동 수확기",
+  "block.cropsfh.hv_crop_harvester": "고급 작물 자동 수확기 II",
+  "block.cropsfh.ev_crop_harvester": "고급 작물 자동 수확기 III",
+  "block.cropsfh.iv_crop_harvester": "엘리트 작물 자동 수확기"
+}
