@@ -75,14 +75,12 @@ public class CropSupportBlock extends BaseEntityBlock {
 
         ItemStack held = player.getItemInHand(hand);
 
-        // Shift + empty hand: remove crop
         if (player.isShiftKeyDown() && held.isEmpty()) {
             support.removeCrop(false);
             level.playSound(null, pos, SoundEvents.GRASS_BREAK, SoundSource.BLOCKS, 1.0f, 2.0f);
             return InteractionResult.SUCCESS;
         }
 
-        // Upgrade empty support to cross crop support
         if (state.is(Registration.CROP_SUPPORT.get()) && !support.hasCrop() && held.is(Registration.CROP_SUPPORT_ITEM.get())) {
             level.setBlockAndUpdate(pos, Registration.CROSS_CROP_SUPPORT.get().defaultBlockState());
             level.playSound(null, pos, SoundEvents.WOOD_PLACE, SoundSource.BLOCKS, 1.0f, 2.0f);
@@ -92,8 +90,8 @@ public class CropSupportBlock extends BaseEntityBlock {
             return InteractionResult.SUCCESS;
         }
 
-        // Plant seed
         if (!support.hasCrop() && !held.isEmpty()) {
+            if (state.is(Registration.CROSS_CROP_SUPPORT.get())) return InteractionResult.PASS;
             if (CropPlantHelper.getCropBlock(held) != null) {
                 support.plantSeed(held);
                 level.playSound(null, pos, SoundEvents.GRASS_BREAK, SoundSource.BLOCKS, 1.0f, 2.0f);
@@ -104,7 +102,6 @@ public class CropSupportBlock extends BaseEntityBlock {
             }
         }
 
-        // Harvest
         if (support.hasCrop() && support.isMature()) {
             support.harvest(player);
             level.playSound(null, pos, SoundEvents.GRASS_BREAK, SoundSource.BLOCKS, 1.0f, 2.0f);

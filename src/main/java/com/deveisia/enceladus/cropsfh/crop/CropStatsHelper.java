@@ -14,7 +14,7 @@ public class CropStatsHelper {
     private static final String TAG_GAIN = "cropsfh_gain";
     private static final String TAG_RESISTANCE = "cropsfh_resistance";
 
-    private static final DecimalFormat RESISTANCE_FORMAT = new DecimalFormat("0.##", DecimalFormatSymbols.getInstance(Locale.ROOT));
+    private static final DecimalFormat RESISTANCE_FORMAT = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ROOT));
 
     public static CompoundTag write(CropStats stats) {
         CompoundTag tag = new CompoundTag();
@@ -53,6 +53,6 @@ public class CropStatsHelper {
     }
 
     public static double getDegenerationChance(CropStats stats) {
-        return Math.max(0.0, 0.1 - stats.resistance() * 0.001);
+        return Math.max(0.0, 0.1 * (1.0 - stats.resistance() / CropStats.MAX_RESISTANCE));
     }
 }

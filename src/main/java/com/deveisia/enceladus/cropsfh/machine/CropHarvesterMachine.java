@@ -98,7 +98,6 @@ public class CropHarvesterMachine extends TieredEnergyMachine implements IFancyU
         if (!support.hasCrop() || !support.isMature()) return false;
 
         List<ItemStack> drops = support.getHarvestDrops();
-        // Check capacity before harvesting so crops don't get destroyed if the inventory is full.
         for (ItemStack drop : drops) {
             if (!insertItem(drop, true).isEmpty()) return false;
         }

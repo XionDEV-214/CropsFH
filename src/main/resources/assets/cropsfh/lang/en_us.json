@@ -14,5 +14,10 @@
   "block.cropsfh.mv_crop_harvester": "Advanced Crop Harvester",
   "block.cropsfh.hv_crop_harvester": "Advanced Crop Harvester II",
   "block.cropsfh.ev_crop_harvester": "Advanced Crop Harvester III",
-  "block.cropsfh.iv_crop_harvester": "Elite Crop Harvester"
+  "block.cropsfh.iv_crop_harvester": "Elite Crop Harvester",
+  "cropsfh.jade.seed": "Seed: %s",
+  "cropsfh.jade.mature": "Mature",
+  "cropsfh.jade.time_remaining": "Time remaining: %ss",
+  "cropsfh.jade.stats": "G/G/R: %s / %s / %s",
+  "cropsfh.jade.degeneration": "Degeneration: %s%%"
 }

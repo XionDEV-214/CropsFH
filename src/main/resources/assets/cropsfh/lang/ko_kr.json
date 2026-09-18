@@ -14,5 +14,10 @@
   "block.cropsfh.mv_crop_harvester": "고급 작물 자동 수확기",
   "block.cropsfh.hv_crop_harvester": "고급 작물 자동 수확기 II",
   "block.cropsfh.ev_crop_harvester": "고급 작물 자동 수확기 III",
-  "block.cropsfh.iv_crop_harvester": "엘리트 작물 자동 수확기"
+  "block.cropsfh.iv_crop_harvester": "엘리트 작물 자동 수확기",
+  "cropsfh.jade.seed": "씨앗: %s",
+  "cropsfh.jade.mature": "성숙",
+  "cropsfh.jade.time_remaining": "남은 시간: %s초",
+  "cropsfh.jade.stats": "성장/수확/저항: %s / %s / %s",
+  "cropsfh.jade.degeneration": "퇴화: %s%%"
 }

@@ -36,7 +36,7 @@ public class CropSupportBlockEntity extends BlockEntity {
     private static final String TAG_GROWTH_TICKS = "growthTicks";
     private static final String TAG_IS_CHILD = "isChild";
 
-    private static final int CHILD_GROWTH_TICKS = 180 * 20;
+    private static final int CHILD_GROWTH_TICKS = 120 * 20;
 
     private ItemStack seed = ItemStack.EMPTY;
     private CropStats stats = CropStats.DEFAULT_SEED;
@@ -117,13 +117,19 @@ public class CropSupportBlockEntity extends BlockEntity {
 
         if (isChild) {
             RandomSource random = level != null ? level.random : RandomSource.create();
-            int count = 2 + random.nextInt(7); // 2 - 8
+            int count = 2 + random.nextInt(7);
             ItemStack seeds = seed.copyWithCount(count);
             CropSeedHelper.setStats(seeds, stats);
             return Collections.singletonList(seeds);
         }
 
-        return calculateHarvestDrops();
+        List<ItemStack> drops = calculateHarvestDrops();
+        ItemStack fruit = CropPlantHelper.getStemFruit(seed);
+        if (!fruit.isEmpty()) {
+            drops = new ArrayList<>(drops);
+            drops.add(fruit);
+        }
+        return drops;
     }
 
     public List<ItemStack> harvestAndGetDrops() {
@@ -163,7 +169,6 @@ public class CropSupportBlockEntity extends BlockEntity {
             long finalCount = (long) Math.floor(drop.getCount() * gain * gainMultiplier);
             if (finalCount <= 0) finalCount = drop.getCount();
             ItemStack scaled = drop.copyWithCount((int) Math.min(finalCount, drop.getMaxStackSize()));
-            // Preserve CropsFH stats on any seed-like drops so replanted seeds keep their quality.
             if (scaled.getItem() == seed.getItem()) {
                 CropSeedHelper.setStats(scaled, stats);
             }
@@ -247,13 +252,13 @@ public class CropSupportBlockEntity extends BlockEntity {
     }
 
     private CropStats generateChildStats(CropStats base, RandomSource random) {
-        int growth = base.growth() + (int) Math.round(CropStats.MAX_GROWTH * 0.01 * random.nextDouble());
-        int gain = base.gain() + (int) Math.round(CropStats.MAX_GAIN * 0.01 * random.nextDouble());
-        double resistance = base.resistance() + CropStats.MAX_RESISTANCE * 0.01 * random.nextDouble();
+        int growth = base.growth() + (int) Math.round(CropStats.MAX_GROWTH * 0.001 * random.nextDouble());
+        int gain = base.gain() + (int) Math.round(CropStats.MAX_GAIN * 0.001 * random.nextDouble());
+        double resistance = base.resistance() + CropStats.MAX_RESISTANCE * 0.001 * random.nextDouble();
         return new CropStats(growth, gain, resistance);
     }
 
-    private int getRequiredGrowthTicks() {
+    public int getRequiredGrowthTicks() {
         if (isChild) return CHILD_GROWTH_TICKS;
 
         int baseSeconds = CropsFHConfig.BASE_GROWTH_TIME.get();
@@ -270,7 +275,6 @@ public class CropSupportBlockEntity extends BlockEntity {
 
 
     private int getGrowthStepTicks() {
-        // One "stage" worth of ticks. Simplified as 1/4 of required ticks.
         return Math.max(1, getRequiredGrowthTicks() / 4);
     }
 
@@ -278,6 +282,10 @@ public class CropSupportBlockEntity extends BlockEntity {
         if (level == null) return SoilRegistry.DEFAULT;
         Block soilBlock = level.getBlockState(worldPosition.below()).getBlock();
         return SoilRegistry.get(soilBlock);
+    }
+
+    public int getGrowthTicks() {
+        return growthTicks;
     }
 
     public float getGrowthProgress() {

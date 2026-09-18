@@ -3,7 +3,7 @@ package com.deveisia.enceladus.cropsfh.crop;
 public record CropStats(int growth, int gain, double resistance) {
     public static final int MAX_GROWTH = 10_000;
     public static final int MAX_GAIN = 10_000;
-    public static final double MAX_RESISTANCE = 100.0;
+    public static final double MAX_RESISTANCE = 10_000.0;
 
     public static final CropStats DEFAULT_SEED = new CropStats(0, 1, 0.0);
 
