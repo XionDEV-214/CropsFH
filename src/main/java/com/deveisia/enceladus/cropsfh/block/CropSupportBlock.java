@@ -92,7 +92,7 @@ public class CropSupportBlock extends BaseEntityBlock {
 
         if (!support.hasCrop() && !held.isEmpty()) {
             if (state.is(Registration.CROSS_CROP_SUPPORT.get())) return InteractionResult.PASS;
-            if (CropPlantHelper.getCropBlock(held) != null) {
+            if (CropPlantHelper.isValidSeed(held)) {
                 support.plantSeed(held);
                 level.playSound(null, pos, SoundEvents.GRASS_BREAK, SoundSource.BLOCKS, 1.0f, 2.0f);
                 if (!player.isCreative()) {

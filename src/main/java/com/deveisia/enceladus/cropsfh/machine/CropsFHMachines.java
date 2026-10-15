@@ -30,8 +30,8 @@ public class CropsFHMachines {
 
     public static void init() {
         for (int tier : HARVESTER_TIERS) {
-            int range = 2 * (tier + 1) + 1; // LV=5, MV=7, HV=9, EV=11, IV=13
-            int slots = (tier + 4) * (tier + 4); // LV=5x5, MV=6x6, HV=7x7, EV=8x8, IV=9x9
+            int range = 2 * (tier + 1) + 1;
+            int slots = (tier + 4) * (tier + 4);
             String name = GTValues.VN[tier].toLowerCase(Locale.ROOT) + "_crop_harvester";
 
             MachineBuilder<MachineDefinition, ?> builder = CropsFHGTAddon.REGISTRATE.machine(name, info -> new CropHarvesterMachine(info, tier, range, slots));

@@ -39,7 +39,6 @@ public class Registration {
                     .title(net.minecraft.network.chat.Component.translatable("itemGroup.cropsfh"))
                     .displayItems((parameters, output) -> {
                         output.accept(CROP_SUPPORT_ITEM.get());
-                        // Cross Crop Support는 배양용 내장 형태이므로 크리에이티브 인벤토리에 표시하지 않습니다.
                     })
                     .build());
 

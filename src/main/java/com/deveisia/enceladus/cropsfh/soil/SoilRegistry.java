@@ -76,6 +76,10 @@ public class SoilRegistry {
         return SOILS.containsKey(block);
     }
 
+    public static java.util.List<SoilConfig> all() {
+        return new java.util.ArrayList<>(SOILS.values());
+    }
+
     public static SoilConfig get(Block block) {
         return SOILS.getOrDefault(block, DEFAULT);
     }

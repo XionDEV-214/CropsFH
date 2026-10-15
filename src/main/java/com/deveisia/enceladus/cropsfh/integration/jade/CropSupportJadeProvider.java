@@ -17,7 +17,6 @@ import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
 
 public class CropSupportJadeProvider implements IBlockComponentProvider {
-
     @Override
     public void appendTooltip(@NotNull ITooltip tooltip, @NotNull BlockAccessor accessor, @NotNull IPluginConfig config) {
         if (!(accessor.getBlock() instanceof CropSupportBlock)) return;

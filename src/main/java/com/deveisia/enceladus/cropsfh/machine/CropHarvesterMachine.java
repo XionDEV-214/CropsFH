@@ -171,7 +171,6 @@ public class CropHarvesterMachine extends TieredEnergyMachine implements IFancyU
         return group;
     }
 
-    // IAutoOutputItem implementation
     @Override
     public boolean isAutoOutputItems() {
         return autoOutputItems;
@@ -202,7 +201,6 @@ public class CropHarvesterMachine extends TieredEnergyMachine implements IFancyU
         this.outputFacingItems = direction;
     }
 
-    // IControllable implementation
     @Override
     public boolean isWorkingEnabled() {
         return true;
@@ -212,7 +210,6 @@ public class CropHarvesterMachine extends TieredEnergyMachine implements IFancyU
     public void setWorkingEnabled(boolean isWorkingAllowed) {
     }
 
-    // IDropSaveMachine implementation
     @Override
     public void saveToItem(CompoundTag tag) {
         tag.put("inventory", output.storage.serializeNBT());

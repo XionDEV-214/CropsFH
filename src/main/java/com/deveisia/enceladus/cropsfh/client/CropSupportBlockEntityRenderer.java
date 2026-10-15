@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.state.properties.Property;
 import org.jetbrains.annotations.NotNull;
 
 public class CropSupportBlockEntityRenderer implements BlockEntityRenderer<CropSupportBlockEntity> {
-
     public CropSupportBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
     }
 

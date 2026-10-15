@@ -2,8 +2,10 @@ package com.deveisia.enceladus.cropsfh;
 
 import com.deveisia.enceladus.cropsfh.client.CropSupportBlockEntityRenderer;
 import com.deveisia.enceladus.cropsfh.config.CropsFHConfig;
+import com.deveisia.enceladus.cropsfh.crop.CropPlantHelper;
 import com.deveisia.enceladus.cropsfh.machine.CropsFHGTAddon;
 import com.deveisia.enceladus.cropsfh.machine.CropsFHMachines;
+import com.deveisia.enceladus.cropsfh.network.CropsFHNetwork;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,8 +41,9 @@ public class CropsFHMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        CropsFHNetwork.register();
         event.enqueueWork(() -> {
-            // Common setup tasks can be enqueued here.
+            CropPlantHelper.discoverCrops();
         });
     }
 

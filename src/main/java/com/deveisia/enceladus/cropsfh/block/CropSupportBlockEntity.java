@@ -20,8 +20,6 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 
 import org.jetbrains.annotations.NotNull;
@@ -146,20 +144,11 @@ public class CropSupportBlockEntity extends BlockEntity {
         return drops;
     }
 
-
     public List<ItemStack> calculateHarvestDrops() {
         List<ItemStack> result = new ArrayList<>();
-        if (!hasCrop()) return result;
+        if (!hasCrop() || !(level instanceof ServerLevel serverLevel)) return result;
 
-        Block cropBlock = CropPlantHelper.getCropBlock(seed);
-        if (cropBlock == null || !(level instanceof ServerLevel serverLevel)) return result;
-
-        BlockState matureState = CropPlantHelper.getMatureState(cropBlock);
-        LootParams.Builder builder = new LootParams.Builder(serverLevel)
-                .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(worldPosition))
-                .withParameter(LootContextParams.BLOCK_STATE, matureState)
-                .withParameter(LootContextParams.TOOL, ItemStack.EMPTY);
-        List<ItemStack> baseDrops = matureState.getDrops(builder);
+        List<ItemStack> baseDrops = CropPlantHelper.rollBaseDrops(serverLevel, seed, Vec3.atCenterOf(worldPosition));
 
         SoilConfig soil = getSoil();
         int gain = stats.gain();
@@ -262,6 +251,10 @@ public class CropSupportBlockEntity extends BlockEntity {
         if (isChild) return CHILD_GROWTH_TICKS;
 
         int baseSeconds = CropsFHConfig.BASE_GROWTH_TIME.get();
+        int overrideSeconds = CropPlantHelper.getGrowTimeOverrideSeconds(seed);
+        if (overrideSeconds > 0) {
+            baseSeconds = overrideSeconds;
+        }
         int minSeconds = CropsFHConfig.MIN_GROWTH_TIME.get();
 
         double speedMultiplier = CropStatsHelper.getGrowthMultiplier(stats);
@@ -272,7 +265,6 @@ public class CropSupportBlockEntity extends BlockEntity {
         seconds = Math.max(minSeconds, seconds);
         return (int) Math.round(seconds * 20);
     }
-
 
     private int getGrowthStepTicks() {
         return Math.max(1, getRequiredGrowthTicks() / 4);

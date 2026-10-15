@@ -19,5 +19,14 @@
   "cropsfh.jade.mature": "Mature",
   "cropsfh.jade.time_remaining": "Time remaining: %ss",
   "cropsfh.jade.stats": "G/G/R: %s / %s / %s",
-  "cropsfh.jade.degeneration": "Degeneration: %s%%"
+  "cropsfh.jade.degeneration": "Degeneration: %s%%",
+  "jei.cropsfh.category.crop": "Crop Support",
+  "jei.cropsfh.tooltip.grow_time": "Growth time: %s",
+  "jei.cropsfh.tooltip.soil_speed": "Soil growth speed: x%s",
+  "jei.cropsfh.tooltip.soil_gain": "Soil yield: x%s",
+  "jei.cropsfh.tooltip.chance": "Chance: %s%%",
+  "jei.cropsfh.tooltip.amount": "Amount: %s",
+  "jei.cropsfh.tooltip.amount_range": "Amount: %s-%s",
+  "commands.cropsfh.missing.header": "%s seed(s) tagged forge:seeds are not supported by CropsFH:",
+  "commands.cropsfh.missing.more": "...and %s more"
 }

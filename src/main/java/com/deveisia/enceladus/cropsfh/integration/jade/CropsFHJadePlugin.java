@@ -6,7 +6,6 @@ import snownee.jade.api.WailaPlugin;
 
 @WailaPlugin
 public class CropsFHJadePlugin implements IWailaPlugin {
-
     @Override
     public void registerClient(IWailaClientRegistration registration) {
         registration.registerBlockComponent(new CropSupportJadeProvider(), net.minecraft.world.level.block.Block.class);

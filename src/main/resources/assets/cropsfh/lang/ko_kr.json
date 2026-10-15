@@ -19,5 +19,14 @@
   "cropsfh.jade.mature": "성숙",
   "cropsfh.jade.time_remaining": "남은 시간: %s초",
   "cropsfh.jade.stats": "성장/수확/저항: %s / %s / %s",
-  "cropsfh.jade.degeneration": "퇴화: %s%%"
+  "cropsfh.jade.degeneration": "퇴화: %s%%",
+  "jei.cropsfh.category.crop": "작물 지지대",
+  "jei.cropsfh.tooltip.grow_time": "성장 시간: %s",
+  "jei.cropsfh.tooltip.soil_speed": "토양 성장 속도: x%s",
+  "jei.cropsfh.tooltip.soil_gain": "토양 수확량: x%s",
+  "jei.cropsfh.tooltip.chance": "확률: %s%%",
+  "jei.cropsfh.tooltip.amount": "수량: %s",
+  "jei.cropsfh.tooltip.amount_range": "수량: %s~%s",
+  "commands.cropsfh.missing.header": "forge:seeds 태그가 붙은 씨앗 중 CropsFH에서 지원되지 않는 것: %s개",
+  "commands.cropsfh.missing.more": "...외 %s개"
 }
