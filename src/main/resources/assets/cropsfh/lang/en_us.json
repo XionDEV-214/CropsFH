@@ -28,5 +28,7 @@
   "jei.cropsfh.tooltip.amount": "Amount: %s",
   "jei.cropsfh.tooltip.amount_range": "Amount: %s-%s",
   "commands.cropsfh.missing.header": "%s seed(s) tagged forge:seeds are not supported by CropsFH:",
-  "commands.cropsfh.missing.more": "...and %s more"
+  "commands.cropsfh.missing.more": "...and %s more",
+  "item.cropsfh.stickreed_seed": "Stickreed Seeds",
+  "block.cropsfh.stickreed": "Stickreed"
 }

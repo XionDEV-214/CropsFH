@@ -28,5 +28,7 @@
   "jei.cropsfh.tooltip.amount": "수량: %s",
   "jei.cropsfh.tooltip.amount_range": "수량: %s~%s",
   "commands.cropsfh.missing.header": "forge:seeds 태그가 붙은 씨앗 중 CropsFH에서 지원되지 않는 것: %s개",
-  "commands.cropsfh.missing.more": "...외 %s개"
+  "commands.cropsfh.missing.more": "...외 %s개",
+  "item.cropsfh.stickreed_seed": "고무수수 씨앗",
+  "block.cropsfh.stickreed": "고무수수"
 }

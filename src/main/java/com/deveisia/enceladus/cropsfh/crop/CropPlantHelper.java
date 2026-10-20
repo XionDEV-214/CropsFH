@@ -250,7 +250,12 @@ public class CropPlantHelper {
                 .withParameter(LootContextParams.ORIGIN, origin)
                 .withParameter(LootContextParams.BLOCK_STATE, matureState)
                 .withParameter(LootContextParams.TOOL, ItemStack.EMPTY);
-        return matureState.getDrops(builder);
+        try {
+            com.deveisia.enceladus.cropsfh.loot.StickreedSeedLootModifier.SUPPRESS.set(true);
+            return matureState.getDrops(builder);
+        } finally {
+            com.deveisia.enceladus.cropsfh.loot.StickreedSeedLootModifier.SUPPRESS.remove();
+        }
     }
 
     public static ItemStack getStemFruit(ItemStack seed) {

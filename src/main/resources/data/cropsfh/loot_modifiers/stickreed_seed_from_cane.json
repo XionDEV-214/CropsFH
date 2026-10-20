@@ -1,0 +1,10 @@
+{
+  "type": "cropsfh:stickreed_seed_from_cane",
+  "conditions": [
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:sugar_cane"
+    }
+  ],
+  "chance": 0.05
+}
